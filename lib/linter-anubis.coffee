@@ -13,7 +13,7 @@ class LinterAnubis extends Linter
 
   # A regex pattern used to extract information from the executable's output.
   regex:
-    '(.*?) \\(line (?<line>\\d+), column (?<col>\\d+)\\) \\w+ (?<type>(?<error>E)|(?<warning>W))(?<code>\\d+):\n(?<message>.+)'
+    '^(.*?) \\(line (?<line>\\d+), column (?<col>\\d+)\\) \\w+ (?<type>(?<error>E)|(?<warning>W))(?<code>\\d+):\n(?<message>.+)(?:# # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # #)'
   
   regexFlags: 's'
   
