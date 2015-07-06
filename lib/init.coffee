@@ -14,4 +14,4 @@ module.exports =
       description: 'Additional compiler arguments'
 
   activate: ->
-    console.log 'linter-anubis activated'
+    console.log 'linter-anubis activated' if atom.inDevMode()

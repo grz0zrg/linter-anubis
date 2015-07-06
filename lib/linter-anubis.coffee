@@ -3,7 +3,7 @@ linterPath = atom.packages.getLoadedPackage("linter").path
 Linter = require "#{linterPath}/lib/linter"
 
 class LinterAnubis extends Linter
-  @syntax: ['source.anubis']
+  @syntax: ['source.anubis', 'source.a2a']
 
   executablePath: null
 
@@ -13,13 +13,13 @@ class LinterAnubis extends Linter
 
   # A regex pattern used to extract information from the executable's output.
   regex:
-    '^(.*?) \\(line (?<line>\\d+), column (?<col>\\d+)\\) \\w+ (?<type>(?<error>E)|(?<warning>W))(?<code>\\d+):\n(?<message>.+)(?:# # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # #)?'
-  
+    '^(?<file>.+) \\(line (?<line>\\d+), column (?<col>\\d+)\\) \\w+ (?<type>(?<error>E)|(?<warning>W))(?<code>\\d+):\n(?<message>.+)(?:# # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # #)?'
+
   regexFlags: 's'
-  
+
   constructor: (editor)->
     super(editor)
-    
+
     @executableDirListener = atom.config.observe 'linter-anubis.executablePath', =>
       executablePath = atom.config.get 'linter-anubis.executablePath'
 
