@@ -1,6 +1,6 @@
 {
   "name": "linter-anubis",
-  "version": "1.0.1",
+  "version": "1.0.2",
   "description": "Anubis language live syntax analysis",
   "repository": "https://github.com/grz0zrg/linter-anubis",
   "license": "MIT",
